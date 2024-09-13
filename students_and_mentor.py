@@ -103,24 +103,26 @@ class Student:
                 f'\nКурсы в процессе изучения: {', '.join(self.courses_in_progress)}'
                 f'\nЗавершенные курсы: {', '.join(self.finished_courses)}')
 
-        # Методы сравнения
-        def __gt__(self, other):
-            return self.get_average_rating() > other.get_average_rating()
+    # Методы сравнения
+    def __gt__(self, other):
+        return self.get_average_rating() > other.get_average_rating()
 
-        def __lt__(self, other):
-            return self.get_average_rating() < other.get_average_rating()
+    def __lt__(self, other):
+        return self.get_average_rating() < other.get_average_rating()
 
-        def __ge__(self, other):
-            return self.get_average_rating() >= other.get_average_rating()
+    def __ge__(self, other):
+        return self.get_average_rating() >= other.get_average_rating()
 
-        def __le__(self, other):
-            return self.get_average_rating() <= other.get_average_rating()
+    def __le__(self, other):
+        return self.get_average_rating() <= other.get_average_rating()
 
-        def __eq__(self, other):
-            return self.get_average_rating() == other.get_average_rating()
+    def __eq__(self, other):
+        return self.get_average_rating() == other.get_average_rating()
 
-        def __ne__(self, other):
-            return self.get_average_rating() != other.get_average_rating()
+    def __ne__(self, other):
+        return self.get_average_rating() != other.get_average_rating()
+
+
 
     # Метод выставление оценки лектору курса
     def rate_lecturer(self, lecturer, course, grade):
@@ -245,7 +247,7 @@ print(f"\tСредняя оценка за лекции: {lector_1.get_name_surn
 print(f"\tСредняя оценка за лекции: {lector_1.get_name_surname()} == {lector_2.get_name_surname()}: {lector_1 == lector_2}")
 print(f"\tСредняя оценка за лекции: {lector_1.get_name_surname()} != {lector_2.get_name_surname()}: {lector_1 != lector_2}")
 
-print(f"Сравнение студентов:\n\tСредняя оценка за домашние задания: {lector_1.get_name_surname()} > {lector_2.get_name_surname()}: {lector_1 > lector_2}")
+print(f"Сравнение студентов:\n\tСредняя оценка за домашние задания: {student_1.get_name_surname()} > {student_2.get_name_surname()}: {student_1 > student_2}")
 print(f"\tСредняя оценка за домашние задания: {student_1.get_name_surname()} < {student_2.get_name_surname()}: {student_1 < student_2}")
 print(f"\tСредняя оценка за домашние задания: {student_1.get_name_surname()} >= {student_2.get_name_surname()}: {student_1 >= student_2}")
 print(f"\tСредняя оценка за домашние задания: {student_1.get_name_surname()} <= {student_2.get_name_surname()}: {student_1 <= student_2}")
