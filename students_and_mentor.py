@@ -246,11 +246,11 @@ print(f"\tСредняя оценка за лекции: {lector_1.get_name_surn
 print(f"\tСредняя оценка за лекции: {lector_1.get_name_surname()} != {lector_2.get_name_surname()}: {lector_1 != lector_2}")
 
 print(f"Сравнение студентов:\n\tСредняя оценка за домашние задания: {lector_1.get_name_surname()} > {lector_2.get_name_surname()}: {lector_1 > lector_2}")
-print(f"\tСредняя оценка за домашние задания: {lector_1.get_name_surname()} < {lector_2.get_name_surname()}: {lector_1 < lector_2}")
-print(f"\tСредняя оценка за домашние задания: {lector_1.get_name_surname()} >= {lector_2.get_name_surname()}: {lector_1 >= lector_2}")
-print(f"\tСредняя оценка за домашние задания: {lector_1.get_name_surname()} <= {lector_2.get_name_surname()}: {lector_1 <= lector_2}")
-print(f"\tСредняя оценка за домашние задания: {lector_1.get_name_surname()} == {lector_2.get_name_surname()}: {lector_1 == lector_2}")
-print(f"\tСредняя оценка за домашние задания: {lector_1.get_name_surname()} != {lector_2.get_name_surname()}: {lector_1 != lector_2}")
+print(f"\tСредняя оценка за домашние задания: {student_1.get_name_surname()} < {student_2.get_name_surname()}: {student_1 < student_2}")
+print(f"\tСредняя оценка за домашние задания: {student_1.get_name_surname()} >= {student_2.get_name_surname()}: {student_1 >= student_2}")
+print(f"\tСредняя оценка за домашние задания: {student_1.get_name_surname()} <= {student_2.get_name_surname()}: {student_1 <= student_2}")
+print(f"\tСредняя оценка за домашние задания: {student_1.get_name_surname()} == {student_2.get_name_surname()}: {student_1 == student_2}")
+print(f"\tСредняя оценка за домашние задания: {student_1.get_name_surname()} != {student_2.get_name_surname()}: {student_1 != student_2}")
 
 print(f'\n Задание 4.2 '
       f'для подсчета средней оценки за домашние задания по всем студентам в рамках конкретного курса (в качестве аргументов принимаем список студентов и название курса);'
