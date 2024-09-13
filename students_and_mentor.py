@@ -32,6 +32,9 @@ class Lecturer(Mentor):
         self.grades = {}
         self.average_rating = 0
 
+    def get_name_surname(self):
+        return f"{self.name} {self.surname}"
+
     #Метод получения средней оценки по всем курсам
     def get_average_rating(self):
         if self.grades:
@@ -48,6 +51,25 @@ class Lecturer(Mentor):
     def __str__(self):
         return (f'Имя: {self.name} \nФамилия: {self.surname} '
                 f'\nСредняя оценка за лекции: {self.get_average_rating()}')
+
+    #Методы сравнения
+    def __gt__(self, other):
+        return self.get_average_rating() > other.get_average_rating()
+
+    def __lt__(self, other):
+        return self.get_average_rating() < other.get_average_rating()
+
+    def __ge__(self, other):
+        return self.get_average_rating() >= other.get_average_rating()
+
+    def __le__(self, other):
+        return self.get_average_rating() <= other.get_average_rating()
+
+    def __eq__(self, other):
+        return self.get_average_rating() == other.get_average_rating()
+
+    def __ne__(self, other):
+        return self.get_average_rating() != other.get_average_rating()
 
 
 class Student:
@@ -71,12 +93,34 @@ class Student:
             return __grade/__num
         return 0
 
+    def get_name_surname(self):
+        return f"{self.name} {self.surname}"
+
     # Перегрузка магического метод __str__
     def __str__(self):
         return (f'Имя: {self.name}\nФамилия: {self.surname}'
                 f'\nСредняя оценка за домашние задания: {self.get_average_rating()}'
                 f'\nКурсы в процессе изучения: {', '.join(self.courses_in_progress)}'
                 f'\nЗавершенные курсы: {', '.join(self.finished_courses)}')
+
+        # Методы сравнения
+        def __gt__(self, other):
+            return self.get_average_rating() > other.get_average_rating()
+
+        def __lt__(self, other):
+            return self.get_average_rating() < other.get_average_rating()
+
+        def __ge__(self, other):
+            return self.get_average_rating() >= other.get_average_rating()
+
+        def __le__(self, other):
+            return self.get_average_rating() <= other.get_average_rating()
+
+        def __eq__(self, other):
+            return self.get_average_rating() == other.get_average_rating()
+
+        def __ne__(self, other):
+            return self.get_average_rating() != other.get_average_rating()
 
     # Метод выставление оценки лектору курса
     def rate_lecturer(self, lecturer, course, grade):
@@ -193,6 +237,21 @@ print(f'\n Задание 3.2 Реализуйте возможность сра
 compare_by_average_rating(student_1,student_2)
 compare_by_average_rating(lector_1,lector_2)
 
+print("---Сравнение с помощью магических методов---")
+print(f"Сравнение лекторов:\n\tСредняя оценка за лекции: {lector_1.get_name_surname()} > {lector_2.get_name_surname()}: {lector_1 > lector_2}")
+print(f"\tСредняя оценка за лекции: {lector_1.get_name_surname()} < {lector_2.get_name_surname()}: {lector_1 < lector_2}")
+print(f"\tСредняя оценка за лекции: {lector_1.get_name_surname()} >= {lector_2.get_name_surname()}: {lector_1 >= lector_2}")
+print(f"\tСредняя оценка за лекции: {lector_1.get_name_surname()} <= {lector_2.get_name_surname()}: {lector_1 <= lector_2}")
+print(f"\tСредняя оценка за лекции: {lector_1.get_name_surname()} == {lector_2.get_name_surname()}: {lector_1 == lector_2}")
+print(f"\tСредняя оценка за лекции: {lector_1.get_name_surname()} != {lector_2.get_name_surname()}: {lector_1 != lector_2}")
+
+print(f"Сравнение студентов:\n\tСредняя оценка за домашние задания: {lector_1.get_name_surname()} > {lector_2.get_name_surname()}: {lector_1 > lector_2}")
+print(f"\tСредняя оценка за домашние задания: {lector_1.get_name_surname()} < {lector_2.get_name_surname()}: {lector_1 < lector_2}")
+print(f"\tСредняя оценка за домашние задания: {lector_1.get_name_surname()} >= {lector_2.get_name_surname()}: {lector_1 >= lector_2}")
+print(f"\tСредняя оценка за домашние задания: {lector_1.get_name_surname()} <= {lector_2.get_name_surname()}: {lector_1 <= lector_2}")
+print(f"\tСредняя оценка за домашние задания: {lector_1.get_name_surname()} == {lector_2.get_name_surname()}: {lector_1 == lector_2}")
+print(f"\tСредняя оценка за домашние задания: {lector_1.get_name_surname()} != {lector_2.get_name_surname()}: {lector_1 != lector_2}")
+
 print(f'\n Задание 4.2 '
       f'для подсчета средней оценки за домашние задания по всем студентам в рамках конкретного курса (в качестве аргументов принимаем список студентов и название курса);'
       f'для подсчета средней оценки за лекции всех лекторов в рамках курса (в качестве аргумента принимаем список лекторов и название курса).')
@@ -201,3 +260,5 @@ lectors = [lector_1,lector_2]
 
 get_average_rating_course('Python', students)
 get_average_rating_course('Python', lectors)
+
+
